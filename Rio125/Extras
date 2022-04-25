@@ -1,0 +1,37 @@
+<parameter name="browser" value="chrome"/>
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+Xpath=//input[@type='email' and @name='email']
+WebDriverWait wait = new WebDriverWait(driver, 40);
+Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+//Store the alert text in a variable
+String text = alert.getText();
+wait.until(ExpectedConditions.elementToBeClickable(By.id("urelementid"))); // instead of id you can use cssSelector or xpath of your element.
+Dynamic table
+//a[contains(text().'confirmed')]/parent::td//preceding-sibling:://input[@name='viewvoucher']
+forwarding-sibling also can be used
+//a[contains(text().' Add Funds')]/parent:://i[@class='la la-wallet mr-2 text-color-9']
+css=i[class*='la la-user mr-2 text-color-2']
+xpath= //div[@class='UUbT9']/div[2]/ul[1]//following::span[1]")
+
+driver
+      .findElement(By.cssSelector("a[href*='about_privacy']"));
+      
+      xpath contains  --  //tag_name[contains(@attribute,'value_of_attribute')]
+      XPath Starts-with() function     //tag_name[starts-with(@attribute,'Part_of_Attribute_value')]
+      XPath Text() function     //tag_name[text()='Text of the element']
+      AND & OR operators ----   //tag_name[@name = 'Name value' and @id = ‘ID value’]
+      //tag_name[@name = 'Name value' or @id = ‘ID value’]
+      
+      Syntax and usage of the ancestor in XPath:
+      //tag[@attribute ='Attribute_Value']//ancestor::parent_node
+//label[text()="Full Name"]/ancestor::form
+
+XPath Child Axis
+//tag[@attribute ='Attribute_Value']//child::child_node
+//form[@id='userForm']/child::div[1]//label
+
+
+
+browser.driver.switchTo().window(handles[0]);
+      

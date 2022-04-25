@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.tcs.scripts.TCCFLogin">
+        <methods>
+          <include name="verifyValidLogin"/>
+          <include name="quitBrowser"/>
+          <include name="verifyMyProfile"/>
+          <include name="tearDown"/>
+          <include name="verifyInvalidLogin5"/>
+          <include name="verifyInvalidLogin3"/>
+          <include name="verifyInvalidLogin6"/>
+          <include name="verifyInvalidLogin4"/>
+          <include name="verifyLogout"/>
+          <include name="verifyInvalidLogin1"/>
+          <include name="onSetup"/>
+          <include name="verifyMyBookings"/>
+          <include name="verifyInvalidLogin2"/>
+        </methods>
+      </class> <!-- com.tcs.scripts.TCCFLogin -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
