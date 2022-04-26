@@ -42,7 +42,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       Thread.sleep(2000);   
 	}
 	
-	@Test(priority=2) //Invalid login with both fields blank
+	/*@Test(priority=2) //Invalid login with both fields blank
     public void verifyAgentInvalidLogin1() throws IOException, Exception {
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 objAdmin= new Admin(driver);	
@@ -56,7 +56,7 @@ objAdmin.BlankAlertDisplayed();
 
 Thread.sleep(2000);
 
-	}
+	}*/
 
 	
 	@Test(priority=8)
@@ -83,7 +83,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   System.out.println("LOGIN Success;Admin Back- End Dashboard Opened,Admin-Test8 Passed");
     Thread.sleep(2000);
   }
-	@Test(priority=9)
+	/*@Test(priority=9)
     public void verifyADWebsite() throws IOException, Exception {
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
     //Create Login Page object
@@ -105,7 +105,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     Assert.assertEquals(expectedURL,actualURL);
     assertTrue(driver.getTitle().contains("JSTRAVELS"));
     System.out.println("Navigated to a different page,Admin-Test9-a Passed");
-      Thread.sleep(4000); */
+      Thread.sleep(4000); 
       driver.switchTo().window(MainWindow);
 	  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	  Thread.sleep(3000);
@@ -117,7 +117,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    Thread.sleep(2000);
 	 
 	
-	}
+	}*/
 
 	@Test(priority=10)
     public void verifyADBookings() throws IOException, Exception {
@@ -135,7 +135,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       Thread.sleep(2000); 
 	}
 	
-	@Test(priority=11)
+	/*@Test(priority=11)
     public void verifyInvoice() throws IOException, Exception {
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
     //Create Login Page object
@@ -180,6 +180,27 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     Thread.sleep(2000);
     objAdmin.acceptAlert();
+    Thread.sleep(2000);
+	
+	}	*/
+	@Test(priority=13)
+    public void verifyADPendToConf() throws IOException, Exception {
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+  
+    objAdmin= new Admin(driver);
+    Thread.sleep(2000);
+    objAdmin.GetConfNumberInitial();
+    Thread.sleep(2000);
+	objAdmin.clickadPending();
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    Thread.sleep(2000);
+    objAdmin.clickConfirmed();
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    Thread.sleep(3000);
+    objAdmin.GetConfNumberFinal();
     Thread.sleep(2000);
 	
 	}	

@@ -34,6 +34,17 @@ WebDriver driver;
 	@FindBy(xpath="//div[@class='alert alert-danger loading wow fadeIn animated animated']")
 	private WebElement bothblankalert;
 	
+	@FindBy(xpath="//div[contains(.,'Confrimed Bookings')]/preceding-sibling::div[@class='display-5']")
+	private WebElement confirmednumber;
+	
+	@FindBy(xpath="//select[@class='form-select status pending']")
+	private WebElement pending;
+	
+	@FindBy(xpath="//select[@class='form-select status pending']/child::option[@class='Confirmed']")
+	private WebElement confirmed;
+	
+	
+	
 	public Admin(WebDriver driver){
 	    this.driver = driver;
 	    //This initElements method will create all WebElements
@@ -102,9 +113,24 @@ WebDriver driver;
     	   else { 
     	      System.out.println("Admin Test-2 failed. Return: " +bothblankalert.isDisplayed()); 
     	    } 
-}         
+}   
+     public void GetConfNumberInitial(){ 
+    	 String InitialConfirmedNumber =confirmednumber.getText();
+    	 System.out.println("The initial number of confirmed booking --- "+InitialConfirmedNumber);
+    	  
+}    
+     public void clickadPending(){ 
+	      pending.click();   
+} 
      
-     
-    	
+     public void clickConfirmed(){ 
+	      confirmed.click();   
+} 	
 
+     public void GetConfNumberFinal(){ 
+    	 String FinalConfirmedNumber=confirmednumber.getText();
+    	 System.out.println("The Final number of confirmed booking --- "+FinalConfirmedNumber);
+    	  
+}       
+     
 }
