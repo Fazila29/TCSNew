@@ -19,6 +19,14 @@ WebDriver driver;
 	private WebElement adpassword;  
 	@FindBy(xpath="//span[contains(.,'Login')and@class='ladda-label']")
 	private WebElement adlogin;
+	@FindBy(xpath="//div[contains(.,'Invalid Login Credentials')and@class='alert alert-danger loading wow fadeIn animated animated']")
+	private WebElement adinvalidalert3;
+	
+	@FindBy(xpath="//div[@class='alert alert-danger loading wow fadeIn animated animated']/child::p")
+	private WebElement adinvalidalert4;
+	
+	
+	
 	@FindBy(xpath="//a[contains(.,'Website')and@class='nav-link']")
 	private WebElement adwebsite;
 	@FindBy(xpath="//a[@href='https://www.phptravels.net/api/admin/bookings'and@class='nav-link loadeffect']")
@@ -113,7 +121,33 @@ WebDriver driver;
     	   else { 
     	      System.out.println("Admin Test-2 failed. Return: " +bothblankalert.isDisplayed()); 
     	    } 
-}   
+}  
+     
+     public void BlankAlert3Displayed(){ 
+    	 if(adinvalidalert3.isDisplayed()) { 
+    		 System.out.println(adinvalidalert3.getText());
+    	       System.out.println("Login failed,Admin-Test3 Passed. Return: " +adinvalidalert3.isDisplayed()); 
+    	    } 
+    	   else { 
+    	      System.out.println("Admin Test-3 failed. Return: " +adinvalidalert3.isDisplayed()); 
+    	    } 
+}     
+     
+     public void BlankAlert4Displayed(){ 
+    	 if(adinvalidalert4.isDisplayed()) { 
+    		 System.out.println(adinvalidalert4.getText());
+    	       System.out.print("Login failed,Admin-Test4 Passed. Return: " +adinvalidalert4.isDisplayed()); 
+    	    } 
+    	   else { 
+    	      System.out.println("Admin Test-4 failed. Return: " +adinvalidalert4.isDisplayed()); 
+    	    } 
+}        
+   
+     
+     
+     
+     
+     
      public void GetConfNumberInitial(){ 
     	 String InitialConfirmedNumber =confirmednumber.getText();
     	 System.out.println("The initial number of confirmed booking --- "+InitialConfirmedNumber);

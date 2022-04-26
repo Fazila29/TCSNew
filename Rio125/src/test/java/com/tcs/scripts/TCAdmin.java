@@ -42,7 +42,7 @@ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       Thread.sleep(2000);   
 	}
 	
-	/*@Test(priority=2) //Invalid login with both fields blank
+	@Test(priority=2) //Invalid login with both fields blank
     public void verifyAgentInvalidLogin1() throws IOException, Exception {
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 objAdmin= new Admin(driver);	
@@ -51,14 +51,117 @@ objAdmin.clearadEmail();
 objAdmin.clearadPassword();
 Thread.sleep(2000);   
 objAdmin.clickadLogin();
-Thread.sleep(2000);
+Thread.sleep(4000);
 objAdmin.BlankAlertDisplayed();
 
 Thread.sleep(2000);
 
-	}*/
-
+	}
+	@Test(priority=3) //Verify invalid login with valid email and invalid password
+    public void verifyADInvalidLogin2() throws IOException, Exception {
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+    //Create Login Page object
+    objAdmin= new Admin(driver);
 	
+  String email = ExcelUtility.getCellData(1,2);
+    String password = ExcelUtility.getCellData(4,2);
+       objCFLogin.setEmail(email);
+       objCFLogin.setPassword(password);
+       objAdmin.clickadLogin();
+       Thread.sleep(2000);
+       
+       objAdmin.BlankAlert3Displayed();
+
+       Thread.sleep(2000);    
+	}
+	
+	
+	@Test(priority=4)//Verify invalid login with valid email and null password
+	public void verifyADInvalidLogin3() throws IOException, Exception {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+		    //Create Login Page object
+		    objAdmin= new Admin(driver);
+			objAdmin.clearadEmail();
+		  String email = ExcelUtility.getCellData(1,2);
+		  objAdmin.setadEmail(email);
+		  objAdmin.clearadPassword();
+		       objAdmin.clickadLogin();
+		       Thread.sleep(3000);
+	
+		       objAdmin.BlankAlert4Displayed();       
+		       
+		       Thread.sleep(2000);
+		   	 
+		       
+		       
+	}
+	
+	@Test(priority=5)//	Verify invalid login with invalid email and valid password
+	
+	 public void verifyAdInvalidLogin4() throws IOException, Exception {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+		    //Create Login Page object
+		    objAdmin= new Admin(driver);
+		    //login to application
+		  
+		    objAdmin.clearadEmail();
+		    String email = ExcelUtility.getCellData(3,2);
+		    objCFLogin.clearPassword();
+		   String password = ExcelUtility.getCellData(2,2);
+		    objAdmin.setadEmail(email);
+		  objAdmin.setadPassword(password);
+		  
+		  //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+
+		  objAdmin.clickadLogin();
+		  Thread.sleep(2000);
+	
+	
+	
+	}
+
+	@Test(priority=6)//Verify invalid login with blank email and valid password
+	
+	 public void verifyInvalidLogin5() throws IOException, Exception {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+		    //Create Login Page object
+		    objAdmin= new Admin(driver);
+		    
+		    objAdmin.clearadEmail();
+		    objAdmin.clearadPassword();
+		    String password = ExcelUtility.getCellData(2,2);
+		    objCFLogin.setPassword(password);
+		    objAdmin.clickadLogin();
+		    Thread.sleep(2000);
+	
+	
+	}
+	
+	
+	@Test(priority=7)//Verify invalid login with invalid email and invalid password
+	public void verifyInvalidLogin6() throws IOException, Exception {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+		
+		 objAdmin= new Admin(driver);
+		    //login to application
+		  
+		    objAdmin.clearadEmail();
+		    String email = ExcelUtility.getCellData(3,2);
+		    objCFLogin.clearPassword();
+		   String password = ExcelUtility.getCellData(4,2);
+		    objAdmin.setadEmail(email);
+		  objAdmin.setadPassword(password);
+		  
+		  //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+
+		  objAdmin.clickadLogin();
+		  Thread.sleep(2000);
+	
+	}
+		
+		
+		
+		
 	@Test(priority=8)
     public void verifyADValidLogin() throws IOException, Exception {
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
