@@ -4,31 +4,12 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.tcs.scripts.TCAgent">
-        <methods>
-          <include name="quitBrowser"/>
-          <include name="closeBrowser"/>
-          <include name="verifyaghotels"/>
-          <include name="verifyagCurrencyConversion"/>
-          <include name="verifyagLogout"/>
-          <include name="verifyagOffers"/>
-          <include name="verifyagVisa"/>
-          <include name="tearDown"/>
-          <include name="verifyagTours"/>
-          <include name="verifyagBlogs"/>
-          <include name="onSetup"/>
-        </methods>
-      </class> <!-- com.tcs.scripts.TCAgent -->
       <class name="com.tcs.scripts.TCAdmin">
         <methods>
-          <include name="verifyADWebsite"/>
           <include name="quitBrowser"/>
           <include name="closeBrowser"/>
           <include name="tearDown"/>
-          <include name="verifyAgentInvalidLogin1"/>
-          <include name="verifyADValidLogin"/>
           <include name="onSetup"/>
-          <include name="verifyADBookings"/>
           <include name="verifyADDeleteBooking"/>
           <include name="verifyInvoice"/>
         </methods>
