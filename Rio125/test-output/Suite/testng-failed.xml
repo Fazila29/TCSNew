@@ -6,12 +6,20 @@
     <classes>
       <class name="com.tcs.scripts.TCAdmin">
         <methods>
+          <include name="verifyAdInvalidLogin4"/>
           <include name="quitBrowser"/>
-          <include name="closeBrowser"/>
+          <include name="verifyAdminLink"/>
           <include name="tearDown"/>
+          <include name="verifyADPendToConf"/>
+          <include name="verifyADBookings"/>
+          <include name="closeBrowser"/>
+          <include name="verifyInvalidLogin5"/>
+          <include name="verifyAgentInvalidLogin1"/>
+          <include name="verifyADValidLogin"/>
+          <include name="verifyADInvalidLogin3"/>
+          <include name="verifyADInvalidLogin2"/>
+          <include name="verifyInvalidLogin6"/>
           <include name="onSetup"/>
-          <include name="verifyADDeleteBooking"/>
-          <include name="verifyInvoice"/>
         </methods>
       </class> <!-- com.tcs.scripts.TCAdmin -->
     </classes>
